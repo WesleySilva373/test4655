@@ -1,0 +1,403 @@
+/* ================= RESET GLOBAL ================= */
+/* O seletor * seleciona TODOS os elementos da página */
+* {
+    /* Remove a margem padrão que os navegadores aplicam */
+    margin: 0;
+
+    /* Remove o espaçamento interno padrão */
+    padding: 0;
+
+    /* Faz com que width e height incluam padding e borda
+       Isso evita cálculos confusos de tamanho */
+    box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+/* O body representa toda a página */
+body {
+    /* Define a fonte padrão do site */
+    font-family: 'Inter', sans-serif;
+
+
+    /* Cor padrão do texto */
+    color: #eaeaea;
+    background: linear-gradient(to bottom left, black, #404041, #0c0c0c, #000000, #2c2b2b, #171718, black) no-repeat;
+    background-size: 300%;
+    animation: backgroundAnimation 5s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 100% 0%;
+    }
+
+    /* Canto superior direito */
+    50% {
+        background-position: 0% 100%;
+    }
+
+    /* Canto inferior esquerdo */
+    100% {
+        background-position: 100% 0%;
+    }
+
+    /* Voltar ao canto superior direito */
+}
+
+
+
+/* ================= HEADER ================= */
+/* Container do cabeçalho */
+.header {
+    /* Limita a largura máxima do conteúdo */
+    max-width: 1100px;
+
+    /* Centraliza o elemento horizontalmente */
+    margin: auto;
+
+    /* Espaçamento interno
+       2rem = cima/baixo | 1rem = esquerda/direita */
+    padding: 2rem 1rem;
+
+    /* Ativa o Flexbox */
+    display: flex;
+
+    /* Coloca os itens em lados opostos (logo | menu) */
+    justify-content: space-between;
+
+    /* Centraliza os itens verticalmente */
+    align-items: center;
+}
+
+
+
+
+/* ================= LOGO ================= */
+/* Estilo do nome / logo */
+.logo {
+    display: flex;
+    font-weight: 700;
+    font-size: 1.5rem;
+    height: 100px;
+    width: 100px;
+}
+
+/* ================= NAVEGAÇÃO ================= */
+/* Links do menu */
+.nav a {
+    /* Espaço entre os links */
+    margin-left: 1.5rem;
+
+    /* Remove o sublinhado padrão dos links */
+    text-decoration: none;
+
+    /* Cor do texto */
+    color: #eaeaea;
+
+    /* Peso médio da fonte */
+    font-weight: 500;
+
+    /* Necessário para usar transform sem quebrar layout */
+    display: inline-block;
+
+    /* Anima suavemente mudanças no transform */
+    transition: transform 0.25s ease;
+    opacity: 1;
+}
+
+/* Efeito ao passar o mouse */
+.nav a:hover {
+    /* Aumenta o tamanho do link em 20% */
+    transform: scale(1.2);
+}
+
+/* ================= HERO ================= */
+/* Seção principal do site */
+.hero {
+    /* Altura mínima: 70% da altura da tela */
+    min-height: 70vh;
+
+    /* Ativa Flexbox */
+    display: flex;
+
+    /* Alinha os itens verticalmente ao centro */
+    align-items: center;
+
+    /* Alinha os itens à direita */
+    justify-content: right;
+
+    /* Centraliza o texto */
+    text-align: center;
+
+    /* Espaçamento interno */
+    padding: 2rem;
+
+    /* Afasta da borda direita */
+    margin-right: 15rem;
+}
+
+/* ================= IMAGEM DE PERFIL ================= */
+.perfil {
+    /* Largura da imagem */
+    width: 25rem;
+
+    /* Altura da imagem */
+    height: 25rem;
+
+    /* Ajusta a imagem sem distorcer */
+    object-fit: cover;
+
+    /* Deixa a imagem circular */
+    border-radius: 50%;
+}
+
+/* ================= CONTAINER AUXILIAR ================= */
+.container {
+    /* Espaçamento interno grande */
+    padding: 5rem;
+
+    /* Ativa Flexbox */
+    display: flex;
+
+    /* Alinha os itens na parte de baixo */
+    align-items: flex-end;
+
+    /* Alinha os itens à direita */
+    justify-content: flex-end;
+
+    /* Espaço entre os elementos */
+    gap: 16px;
+}
+
+/* ================= TEXTOS DO HERO ================= */
+.hero h2 {
+    /* Fonte mais leve */
+    font-weight: 400;
+
+    /* Transparência do texto */
+    opacity: 0.8;
+}
+
+.hero h1 {
+    /* Tamanho grande para título */
+    font-size: 3rem;
+
+    /* Espaçamento em cima e embaixo */
+    margin: 0.5rem 0;
+}
+
+.hero p {
+    /* Limita a largura do parágrafo */
+    max-width: 600px;
+
+    /* Centraliza horizontalmente */
+    margin: 1rem auto 2rem;
+
+    /* Leve transparência */
+    opacity: 0.85;
+}
+
+/* ================= BOTÕES ================= */
+/* Container dos botões */
+.hero-buttons {
+    /* Coloca os botões lado a lado */
+    display: flex;
+
+    /* Espaço entre eles */
+    gap: 1rem;
+
+    /* Centraliza os botões */
+    justify-content: center;
+}
+
+/* Estilo base dos botões */
+.btn {
+    /* Espaçamento interno do botão */
+    padding: 0.75rem 1.5rem;
+
+    /* Cantos arredondados */
+    border-radius: 6px;
+
+    /* Remove sublinhado */
+    text-decoration: none;
+
+    /* Texto em negrito */
+    font-weight: 600;
+}
+
+/* Botão principal */
+.primary {
+    /* Fundo branco */
+    background: #ffffff;
+
+    /* Texto escuro */
+    color: #0f0f0f;
+}
+
+/* Botão secundário */
+.secondary {
+    /* Borda branca */
+    border: 1px solid #ffffff;
+
+    /* Texto branco */
+    color: #ffffff;
+}
+
+/* ================= SEÇÕES ================= */
+.section {
+    /* Limita largura */
+    max-width: 1100px;
+
+    /* Centraliza */
+    margin: auto;
+
+    /* Espaçamento interno */
+    padding: 4rem 1rem;
+}
+
+
+/* Título das seções */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Texto das seções */
+.section-text {
+    opacity: 0.85;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+/* ================= SKILLS ================= */
+/* Grid responsivo de skills */
+.skills-grid {
+    /* Ativa CSS Grid */
+    display: grid;
+
+    /* Cria colunas automáticas e responsivas */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+    /* Espaço entre os itens */
+    gap: 1rem;
+
+    /* Espaço acima do grid */
+    margin-top: 2rem;
+}
+
+/* Card de cada skill */
+.skill {
+    padding: 1rem;
+    gap: 1rem;
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+}
+
+
+/* ================= ESTADO NORMAL ================= */
+/* Todos os ícones começam com a mesma cor */
+.contact-links i {
+    font-size: 2.5rem;
+    color: #888888;
+    /* cor padrão */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* ================= HOVER GITHUB ================= */
+.contact-links a:hover .bi-github {
+    color: #ffffff;
+    /* branco no hover */
+    transform: scale(1.2);
+}
+
+/* ================= HOVER LINKEDIN ================= */
+.contact-links a:hover .bi-linkedin {
+    color: #0a66c2;
+    /* azul oficial do LinkedIn */
+    transform: scale(1.2);
+}
+
+
+
+/* ================= PROJECTS ================= */
+/* Grid dos projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+
+}
+
+/* Card de projeto */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 0.75rem;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+}
+
+/* Título do projeto */
+.project-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.projects-grid img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 30px;
+    
+}
+.btn{
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background-color: #ffffff00;
+    text-decoration: none;
+    color: inherit;
+     transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn a{
+    text-decoration: none;
+    color: #eaeaea;
+    cursor: pointer;
+   font-family: Arial, Helvetica, sans-serif;
+   display: flex;
+   align-items: center;
+}
+.btn:hover{
+        transform: scale(1.05);
+         opacity: 0.5;
+}
+
+
+/* ================= CONTACT ================= */
+/* Links de contato */
+.contact-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* Estilo dos links */
+.contact-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
