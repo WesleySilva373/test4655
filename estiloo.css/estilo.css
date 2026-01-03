@@ -292,6 +292,9 @@ body {
     color: white;
 }
 
+
+
+
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -327,14 +330,14 @@ body {
     padding: 2rem;
 }
 
-.skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+  .skills-grid img {
+    width: 32px;
+    height: 32px;
+   
 }
 
-.skill {
-    width: 80px;
-    height: 80px;
-}
+
 
 .nav {
     display: flex;
@@ -411,6 +414,12 @@ body {
 }
 
 
+
+
+
+
+
+
 @media (min-width: 1200px) {
     .hero {
         flex-direction: column;
@@ -433,7 +442,7 @@ body {
 
     .skill{
        width: 100px;
-       height: 110px;
+       height: 100px;
     }
 
 
